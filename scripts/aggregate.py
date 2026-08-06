@@ -78,7 +78,7 @@ def main() -> None:
         rows.sort(key=lambda r: r["date"])
         out_path = MONTHLY_DIR / f"{month}.csv"
         with out_path.open("w", encoding="utf-8", newline="") as fh:
-            writer = csv.DictWriter(fh, fieldnames=COLUMNS)
+            writer = csv.DictWriter(fh, fieldnames=COLUMNS, lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
         print(f"wrote {out_path.name}: {len(rows)} days")
