@@ -1,0 +1,30 @@
+name: validate-archive
+
+# Pure data-integrity check. Runs the archive's own validation scripts
+# against the committed data. Contains no fetching and no scraping logic.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Daily sanity check so a broken archive is noticed quickly
+    - cron: "30 1 * * *"   # 01:30 UTC = 10:30 JST
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check integrity
+        run: python3 scripts/validate.py
+      - name: Rebuild monthly aggregates
+        run: python3 scripts/aggregate.py && git diff --exit-code data/monthly/ \
+          || (echo "::warning::monthly CSV is out of date, rerun scripts/aggregate.py" && exit 1)

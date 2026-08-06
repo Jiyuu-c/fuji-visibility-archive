@@ -1,0 +1,8 @@
+date,north_am_index,north_pm_index,south_am_index,south_pm_index,north_am_raw,north_pm_raw,south_am_raw,south_pm_raw
+2026-08-01,3,1,3,1,,,,
+2026-08-02,1,1,1,1,,,,
+2026-08-03,10,10,10,8,,,,
+2026-08-04,2,1,10,7,,,,
+2026-08-05,2,1,10,7,,,,
+2026-08-06,1,1,8,1,,,,
+2026-08-07,1,1,4,1,0,0,25,0

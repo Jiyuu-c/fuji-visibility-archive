@@ -1,0 +1,32 @@
+{
+  "date": "2026-08-07",
+  "fetched_at_jst": "2026-08-07T01:05:57+09:00",
+  "source": "third-party Japanese meteorological forecast service",
+  "note": "Archived forecast values as published. NOT ground-truth observations.",
+  "scores": {
+    "north": {
+      "am": {
+        "index": 1,
+        "raw": 0
+      },
+      "pm": {
+        "index": 1,
+        "raw": 0
+      }
+    },
+    "south": {
+      "am": {
+        "index": 4,
+        "raw": 25
+      },
+      "pm": {
+        "index": 1,
+        "raw": 0
+      }
+    }
+  },
+  "scale": {
+    "raw": "0-100 (as provided by source)",
+    "index": "0-10 (voybird.com display scale, derived from raw)"
+  }
+}

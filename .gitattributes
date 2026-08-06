@@ -1,0 +1,7 @@
+# Normalize line endings for the archive data files
+* text=auto
+data/** text eol=lf
+scripts/** text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
