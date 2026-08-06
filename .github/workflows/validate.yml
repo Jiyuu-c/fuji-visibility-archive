@@ -26,5 +26,9 @@ jobs:
       - name: Check integrity
         run: python3 scripts/validate.py
       - name: Rebuild monthly aggregates
-        run: python3 scripts/aggregate.py && git diff --exit-code data/monthly/ \
-          || (echo "::warning::monthly CSV is out of date, rerun scripts/aggregate.py" && exit 1)
+        run: |
+          python3 scripts/aggregate.py
+          if ! git diff --quiet --exit-code data/monthly/; then
+            echo "::warning::monthly CSV is out of date, rerun scripts/aggregate.py"
+            exit 1
+          fi
