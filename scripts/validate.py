@@ -26,6 +26,12 @@ INDEX_RANGE = (0, 10)
 RAW_RANGE = (0, 100)
 
 
+def scale_index(raw: int) -> int:
+    """Same mapping as the production scraper: min(10, max(1, ceil(raw/10)+1))."""
+    import math
+    return min(10, max(1, math.ceil(raw / 10) + 1))
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -70,7 +76,7 @@ def main() -> None:
     if len(dates) != len(records):
         problems.append(f"duplicate dates: {len(records)} files, {len(dates)} unique")
 
-    # Value range checks
+    # Value range checks + raw/index cross-validation
     for rec in records:
         day = rec.get("date", "?")
         scores = rec.get("scores", {}) or {}
@@ -87,6 +93,12 @@ def main() -> None:
                     lo, hi = RAW_RANGE
                     if not (lo <= raw_val <= hi):
                         problems.append(f"{day} {side}.{period}.raw={raw_val} out of range")
+                    # Cross-check: when both present, index must equal scale_index(raw)
+                    if index_val is not None and index_val != scale_index(raw_val):
+                        problems.append(
+                            f"{day} {side}.{period}: index={index_val} inconsistent "
+                            f"with raw={raw_val} (expected {scale_index(raw_val)})"
+                        )
 
     # Contiguity check
     if dates:

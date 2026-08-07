@@ -1,0 +1,5 @@
+# Private server-side scripts — must NEVER be committed to this public repo
+server_archive.py
+push-archive.sh
+*.pyc
+__pycache__/
