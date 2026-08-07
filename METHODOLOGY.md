@@ -28,7 +28,9 @@ daily files contain `index` only (`raw: null`).
 
 ## Coverage gaps
 
-- 2026-06-28: first day archived (index only).
+- 2026-06-16: first day archived (index only). Days 2026-06-16 → 2026-06-27
+  were recovered from the historical records of the sibling fuji-visibility
+  service (same upstream source, same index mapping).
 - 2026-08-07: raw 0–100 values become available in the archive.
 - Days with no upstream publication are simply absent; `scripts/validate.py`
   reports the expected vs actual day count.

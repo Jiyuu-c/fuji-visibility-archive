@@ -5,7 +5,6 @@ Daily archive of Mt. Fuji visibility forecast scores, published as an open datas
 **What this is:** A machine-readable record of visibility forecasts for the
 north (Kawaguchiko) and south (Hakone) sides of Mt. Fuji, archived once per day
 since June 2026.
-
 **What this is NOT:** Ground-truth observations. These are *forecasts as they
 were published*, kept unmodified. They describe how often Fuji was *expected*
 to be visible — not how often it actually was. That distinction matters when
@@ -41,9 +40,11 @@ scheduled update.
 
 ## Coverage
 
-- Start date: 2026-06-28
-- Days archived: 41
-- Completeness: 41/41 (see `scripts/validate.py`)
+- Start date: 2026-06-16
+- Days archived: 53
+- Completeness: 53/53 (see `scripts/validate.py`)
+- Index-only period: 2026-06-16 → 2026-08-06 (raw values not retained by the upstream archive before 2026-08-07)
+- Dual-scale period: 2026-08-07 onward (index + raw)
 
 ## Scripts
 
