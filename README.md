@@ -35,8 +35,9 @@ Each day is a single JSON file under `data/daily/`:
 | `scores.north/south.am/pm.raw` | Raw score, 0–100 as provided by the source (archived since 2026-08-07; `null` for earlier dates) |
 | `note` | Always flags these as forecasts, not observations |
 
-Scores are archived once daily at 17:00 JST, after the upstream service's
-scheduled update.
+New scores are archived once daily at 17:00 JST, after the upstream service's
+scheduled update. Historical days recovered from the sibling fuji-visibility
+service (2026-06-16 → 2026-06-27) carry their original retrieval timestamps.
 
 ## Coverage
 
