@@ -1,6 +1,6 @@
 {
   "date": "2026-08-07",
-  "fetched_at_jst": "2026-08-07T12:42:08+09:00",
+  "fetched_at_jst": "2026-08-07T12:45:54+09:00",
   "source": "third-party Japanese meteorological forecast service",
   "note": "Archived forecast values as published. NOT ground-truth observations.",
   "scores": {
