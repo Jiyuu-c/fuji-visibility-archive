@@ -1,27 +1,27 @@
 {
   "date": "2026-08-07",
-  "fetched_at_jst": "2026-08-07T12:54:21+09:00",
+  "fetched_at_jst": "2026-08-07T17:00:02+09:00",
   "source": "third-party Japanese meteorological forecast service",
   "note": "Archived forecast values as published. NOT ground-truth observations.",
   "scores": {
     "north": {
       "am": {
         "index": 1,
-        "raw": 0
+        "raw": null
       },
       "pm": {
         "index": 1,
-        "raw": 0
+        "raw": null
       }
     },
     "south": {
       "am": {
         "index": 4,
-        "raw": 25
+        "raw": null
       },
       "pm": {
         "index": 1,
-        "raw": 0
+        "raw": null
       }
     }
   },
